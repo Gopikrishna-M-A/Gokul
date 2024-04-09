@@ -16,7 +16,7 @@ def get_todos():
 def checkCr():
 
     if 'file' not in request.files:
-        return 'No file part'
+        return jsonify('No file part')
 
     file = request.files['file']
     
@@ -24,7 +24,7 @@ def checkCr():
     if file and allowed_file(file.filename):
         file.save('source.mp4') 
 
-    return jsonify({'data': "File uploaded successfully"}), 201
+    return jsonify("File uploaded successfully"), 201
 
 def allowed_file(filename):
     ALLOWED_EXTENSIONS = {'mp4', 'avi', 'mov'}  # Define the allowed video file extensions
