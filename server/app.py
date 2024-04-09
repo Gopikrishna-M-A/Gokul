@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
-cors = CORS(app,origins = "http://localhost:5173",
+cors = CORS(app,origins = "http://localhost:3000",
                 methods=["GET", "POST", "PUT", "DELETE"])
 
 
